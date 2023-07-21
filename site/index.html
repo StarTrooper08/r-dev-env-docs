@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>R-Dev-Environment</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="js/jquery-1.10.2.min.js" defer></script>
+        <script src="js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body class="homepage">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">R-Dev-Environment</a>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#r-dev-container" class="nav-link">R Dev Container</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#getting-started" class="nav-link">Getting started</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#running-r" class="nav-link">Running R</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#r-contribution-workflow" class="nav-link">R Contribution Workflow</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#useful-links" class="nav-link">Useful Links</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="r-dev-container">R Dev Container</h1>
+<p><a href="https://www.repostatus.org/#wip"><img alt="Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public." src="https://www.repostatus.org/badges/latest/wip.svg" /></a></p>
+<p><a href="https://codespaces.new/r-devel/r-dev-env"><img alt="Open in GitHub Codespaces" src="https://github.com/codespaces/badge.svg" /></a></p>
+<p>A containerised development environment for editing and compiling the R source code. The environment contains the VSCode IDE and tools needed to compile R.</p>
+<h2 id="getting-started">Getting started</h2>
+<p>You can run this environment on GitHub using <a href="https://github.com/features/codespaces">codespaces</a></p>
+<h3 id="codespaces">Codespaces</h3>
+<p>Click on the 'Open in GitHub Codespaces' button and then click the green 'Create Codespace' button.</p>
+<blockquote>
+<p>You will see the message "Codespace usage for this repository is paid for by ...", with your username. Don't panic!</p>
+<p><strong>Note : Github Codespaces offers 120 core hours of free usage per month for every Github user. So the actual number of free hours is 120 divided by the number of cores you are using to run your codespaces.</strong></p>
+<p><strong>Here for the R-dev-env codespace we have set the codespace usage to 4 cores which leads to 30hrs of free usage per month. And it can also be changed according to your preference.</strong></p>
+<p>For more details about codespaces billing, see the <a href="https://github.com/features/codespaces">Codespaces Billing Docs</a>. You can calculate your GitHub services usage with the <a href="https://github.com/pricing/calculator">GitHub Services Pricing Calculator</a> and check your usage allowance under "Codespaces" on https://github.com/settings/billing.
+<img alt="image" src="https://github.com/r-devel/r-dev-env/assets/72031540/d42c5d89-7f1d-46fc-8fdd-44e03311c9b2" /></p>
+</blockquote>
+<p>The codespace setup screen will then be shown. Starting the container may take a minute or so.</p>
+<p align="center">
+    <img src="screenshots/setting_up_codespace.png" width="80%">
+</p>
+
+<p>You will be taken to a VSCode editor within your browser.</p>
+<p><img alt="image" src="https://github.com/r-devel/r-dev-env/assets/72031540/0597c261-a110-496c-86a4-9fb08f5dc34d" /></p>
+<h2 id="running-r">Running R</h2>
+<p>Create a file in VS Code ending with a .R extension. You can create new files by clicking on the new file icon in VS Code.
+<img alt="image" src="https://github.com/r-devel/r-dev-env/assets/72031540/0597c261-a110-496c-86a4-9fb08f5dc34d" /></p>
+<p>Open the file by clicking on the filename. You should see R:(not attached) in the bottom bar.
+<img alt="image" src="https://github.com/r-devel/r-dev-env/assets/72031540/e670f985-6e9b-4c34-b7e5-d1ca4e48ffe5" /></p>
+<p>Click on the R:(not attached) button to launch R in the terminal. You can then send code from the .R file to the R terminal by pressing cmd/ctrl + enter.
+<img alt="image" src="https://github.com/r-devel/r-dev-env/assets/72031540/27fbceda-3f7a-4baa-ac07-95e772a392eb" /></p>
+<h2 id="r-contribution-workflow">R Contribution Workflow</h2>
+<h3 id="build-setup">Build Setup</h3>
+<ol>
+<li>
+<p>Environment Variables</p>
+<ul>
+<li>We have environment variables for setting the paths for building R and storing the source code.</li>
+<li>The path ENV variable for R Build and R Source code are BUILDDIR and TOP_SRCDIR respectively.</li>
+<li>The environment variables are set in the codespace image and are available when the codespace starts.</li>
+</ul>
+<p><img alt="image" src="https://github.com/r-devel/r-dev-env/assets/72031540/7e208955-5cc1-4761-95f5-20ba85575dd3" />
+2. svn checkout
+   - The svn checkout cmd lets us create working of a repository with specific tag/branch.
+   - Example:
+  <code>bash
+   svn checkout https://svn.r-project.org/R/trunk/ "$TOP_SRCDIR"</code>
+   - Output : We get file structure something like this after checking out R source code from R svn repository.
+ <img alt="image" src="https://github.com/r-devel/r-dev-env/assets/72031540/4d5ec49c-4abe-4d2b-bdae-31f96404d6d4" /></p>
+</li>
+<li>
+<p>cd to BUILDDIR</p>
+</li>
+<li>We need to change our directory to R build directory(BUILDDIR) to build and configure our R source code.</li>
+<li>First we will create a directory using env var BUILDDIR.
+     <code>bash
+     mkdir -p $BUILDDIR</code></li>
+<li>Then we can change directory from root to $BUILDDIR one.
+     <code>bash
+      cd $BUILDDIR</code></li>
+<li>configure source code</li>
+<li>After we change directory to BUILDDIR we can configure and build R.</li>
+<li>CMD
+     <code>bash
+     "$TOP_SRCDIR/configure" --enable-R-shlib --without-recommended-packages
+     make
+     sudo make install</code></li>
+<li>The configure cmd prepares for building R, creating files and folders inside the BUILDDIR directory.</li>
+<li>
+<p>Output : We get file structure something like this after using configure command.</p>
+<p><img alt="image" src="https://github.com/r-devel/r-dev-env/assets/72031540/0d4878fa-c1a8-462b-8365-76cc5dadf734" /></p>
+</li>
+<li>
+<p>After having built the current development version of R, we can now make changes in source code and make our contributions.</p>
+</li>
+</ol>
+<h3 id="contribution-workflow">Contribution Workflow</h3>
+<ol>
+<li>Example Contribution Workflow using DevContainer:</li>
+<li>
+<p>To start working in R we will click on <code>R:(not attach)</code> option which is in the bottom right of our R-dev codespace. It will open R terminal for us.</p>
+<p><img alt="image" src="https://github.com/r-devel/r-dev-env/assets/72031540/4ad3ed18-108a-4f29-ab6c-7f32d81721a7" />
+   <img alt="image" src="https://github.com/r-devel/r-dev-env/assets/72031540/b3bdd3da-903d-4330-81c3-e41147d5dcd4" /></p>
+</li>
+<li>
+<p>We can now run R commands. We will use the <code>utils::askYesNo()</code> function as an example
+      <img alt="image" src="https://github.com/r-devel/r-dev-env/assets/72031540/00ffb5cf-250b-49d9-ab37-4028ad708164" /></p>
+<p>```R</p>
+<blockquote>
+<p>askYesNo("Is this a good example?")
+  Is this a good example? (Yes/no/cancel) Yes
+  [1] TRUE
+  <code>``
+ 2. Edit the source code of</code>utils::askYesNo()<code>to change the default options. The source code can be found in</code>$TOP_SRCDIR/src/library/utils/R/askYesNo.R`.</p>
+</blockquote>
+<p>Before edit:
+<img alt="image" src="https://github.com/r-devel/r-dev-env/assets/72031540/6e7f368a-7a71-457c-a08e-de0d1b3c476f" /></p>
+<p><code>R
+prompts = getOption("askYesNo", gettext(c("Yes", "No", "Cancel"))),</code>
+With edit (for example - change to whatever you like!):
+<img alt="image" src="https://github.com/r-devel/r-dev-env/assets/72031540/b7476540-1030-4f88-ae3c-1c2f9dd90deb" /></p>
+<p><code>R
+  prompts = getOption("askYesNo", gettext(c("Oh yeah!", "Don't think so", "Cancel"))),</code>
+ 3. Re-build the utils package (we only need to re-build the part we have modified). We can rebuild the package by following simple steps
+- First we need to be inside $BUILDDIR, for that we can change directory to <code>cd $BUILDDIR</code>.
+- After that we can run cmd <code>make</code> and <code>sudo make install</code> in a series.
+  <img alt="image" src="https://github.com/r-devel/r-dev-env/assets/72031540/e32f8b8f-c573-41e6-b4cc-31fb3494891a" /></p>
+<p><img alt="image" src="https://github.com/r-devel/r-dev-env/assets/72031540/709dd607-5d22-4b17-90ad-8f642ecad6b6" /></p>
+<ul>
+<li>This will re-build any parts of R that have changed, in this case only re-building the utils package, then re-install R. If we open a new R terminal we will see our changes getting reflected.</li>
+<li>Check the edit has worked as expected by re-running the example code:
+<img alt="image" src="https://github.com/r-devel/r-dev-env/assets/72031540/97fcfee8-dae5-402c-8bf4-0df62a63c3b0" /></li>
+</ul>
+<p>```R</p>
+<blockquote>
+<p>askYesNo("Is this a good example?")
+Is this a good example? (Oh yeah!/don't think so/cancel) Oh yeah!
+[1] TRUE
+```</p>
+</blockquote>
+<h2 id="useful-links">Useful Links</h2>
+</li>
+<li>
+<p><a href="https://code.visualstudio.com/docs/languages/r">R in Visual Studio code</a></p>
+</li>
+<li>
+<p><a href="https://github.com/REditorSupport/vscode-R/wiki">VSCode R Wiki</a></p>
+</li>
+<li>
+<p><a href="https://code.visualstudio.com/docs/devcontainers/tutorial">Getting started with Dev Containers</a></p>
+</li>
+<li>
+<p><a href="https://www.docker.com/products/docker-desktop/">Install Docker Desktop</a></p>
+</li>
+<li>
+<p><a href="https://docs.docker.com/desktop/install/linux-install/">Installing Docker on Linux</a></p>
+</li>
+<li>
+<p><a href="https://code.visualstudio.com/docs/devcontainers/containers">Dev Container Documentation</a></p>
+</li>
+</ol></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js" defer></script>
+        <script src="search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.4.3
+Build Date UTC : 2023-07-21 11:13:53.178241+00:00
+-->
